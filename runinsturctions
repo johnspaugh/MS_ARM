@@ -1,0 +1,44 @@
+git clone https://github.com/k-mrm/xv6-aarch64.git
+
+cd xv6-aarch64
+	
+"make clean" (added )
+
+make
+
+make qemu
+
+user/sh.c: In function 'runcmd':
+user/sh.c:58:1: error: infinite recursion detected [-Werror=infinite-recursion]
+   58 | runcmd(struct cmd *cmd)
+      | ^~~~~~
+user/sh.c:89:5: note: recursive call
+   89 |     runcmd(rcmd->cmd);
+      |     ^~~~~~~~~~~~~~~~~
+user/sh.c:109:7: note: recursive call
+  109 |       runcmd(pcmd->left);
+      |       ^~~~~~~~~~~~~~~~~~
+user/sh.c:116:7: note: recursive call
+  116 |       runcmd(pcmd->right);
+      |       ^~~~~~~~~~~~~~~~~~~
+user/sh.c:95:7: note: recursive call
+   95 |       runcmd(lcmd->left);
+      |       ^~~~~~~~~~~~~~~~~~
+user/sh.c:97:5: note: recursive call
+   97 |     runcmd(lcmd->right);
+      |     ^~~~~~~~~~~~~~~~~~~
+user/sh.c:127:7: note: recursive call
+  127 |       runcmd(bcmd->cmd);
+      |       ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+make: *** [<builtin>: user/sh.o] Error 1
+
+in the Makefile
+#commented out below, then replace to ignore runcmd error in compiling
+#CFLAGS += -MD
+CFLAGS += -MD -Wno-infinite-recursion
+
+
+
+
+

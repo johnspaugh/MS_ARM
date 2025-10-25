@@ -1,0 +1,102 @@
+
+sudo apt install
+sudo apt install qemu-arm
+sudo apt install github
+sudo apt install xv6-aarch64
+sudo apt install openssh-server 
+
+sudo apt-get install gdb
+				 				 
+
+//how to leave qemu access, how to quit
+//"control+A, then press X"
+
+"man dpkg"
+"sudo dpkg --list"
+"===+++=="
+
+
+grep open -r ./
+//will search in folder everything that has open in the text				
+
+
+sudo apt install openssh-server
+
+sudo systemctl status ssh
+
+sudo systemctl restart ssh
+
+https://login.tailscale.com/admin/welcome
+
+//From the Professor,
+HornetSys / raspi3-tutorial, "raspi3-tutorial forked from bztsrc/raspi3-tutorial,"
+github.com, Accessed: Oct. 23, 2025. [Online] Available: 
+https://github.com/HornetSys/raspi3-tutorial/tree/HornetSys-patch-1
+Specific branch used to fine the code for the installs:
+https://github.com/HornetSys/raspi3-tutorial/blob/HornetSys-patch-1/00_crosscompiler/README.md
+
+-------------------------------------------------------
+johnspaugh@raspberrypi:~/aarch64-elf-toolchain/build-gcc $ $ ls /usr/local/cross-compiler/bin
+aarch64-elf-addr2line  aarch64-elf-elfedit    aarch64-elf-gcc-ranlib  aarch64-elf-ld       aarch64-elf-ranlib
+aarch64-elf-ar         aarch64-elf-gcc        aarch64-elf-gcov        aarch64-elf-ld.bfd   aarch64-elf-readelf
+aarch64-elf-as         aarch64-elf-gcc-7.2.0  aarch64-elf-gcov-dump   aarch64-elf-nm       aarch64-elf-size
+aarch64-elf-c++filt    aarch64-elf-gcc-ar     aarch64-elf-gcov-tool   aarch64-elf-objcopy  aarch64-elf-strings
+aarch64-elf-cpp        aarch64-elf-gcc-nm     aarch64-elf-gprof       aarch64-elf-objdump  aarch64-elf-strip
+bash: $: command not found
+aarch64-elf-addr2line: 'a.out': No such file
+aarch64-elf-ar: invalid option -- '6'
+Usage: aarch64-elf-ar [emulation options] [-]{dmpqrstx}[abcDfilMNoOPsSTuvV] [--plugin <name>] [member-name] [count] archive-file file...
+       aarch64-elf-ar -M [<mri-script]
+ commands:
+  d            - delete file(s) from the archive
+  m[ab]        - move file(s) in the archive
+  p            - print file(s) found in the archive
+  q[f]         - quick append file(s) to the archive
+  r[ab][f][u]  - replace existing or insert new file(s) into the archive
+  s            - act as ranlib
+  t[O][v]      - display contents of the archive
+  x[o]         - extract file(s) from the archive
+ command specific modifiers:
+  [a]          - put file(s) after [member-name]
+  [b]          - put file(s) before [member-name] (same as [i])
+  [D]          - use zero for timestamps and uids/gids
+  [U]          - use actual timestamps and uids/gids (default)
+  [N]          - use instance [count] of name
+  [f]          - truncate inserted file names
+  [P]          - use full path names when matching
+  [o]          - preserve original dates
+  [O]          - display offsets of files in the archive
+  [u]          - only replace files that are newer than current archive contents
+ generic modifiers:
+  [c]          - do not warn if the library had to be created
+  [s]          - create an archive index (cf. ranlib)
+  [l <text> ]  - specify the dependencies of this library
+  [S]          - do not build a symbol table
+  [T]          - deprecated, use --thin instead
+  [v]          - be verbose
+  [V]          - display the version number
+  @<file>      - read options from <file>
+  --target=BFDNAME - specify the target object format as BFDNAME
+  --output=DIRNAME - specify the output directory for extraction operations
+  --record-libdeps=<text> - specify the dependencies of this library
+  --thin       - make a thin archive
+ optional:
+  --plugin <p> - load the specified plugin
+ emulation options: 
+  No emulation specific options
+aarch64-elf-ar: supported targets: elf64-littleaarch64 elf64-bigaarch64 elf32-littleaarch64 elf32-bigaarch64 elf32-littlearm elf32-bigarm pei-aarch64-little elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+Assembler messages:
+Error: can't open aarch64-elf-gcc-7.2.0 for reading: No such file or directory
+aarch64-elf-gcc-7.2.0: Error: can't open aarch64-elf-gcov-dump for reading: No such file or directory
+aarch64-elf-gcov-dump: Error: can't open aarch64-elf-nm for reading: No such file or directory
+aarch64-elf-nm: Error: can't open aarch64-elf-size for reading: No such file or directory
+aarch64-elf-gcc-ar
+aarch64-elf-gcov-tool
+aarch64-elf-objcopy
+aarch64-elf-strings
+aarch64-elf-cpp: fatal error: too many input files
+compilation terminated.
+johnspaugh@raspberrypi:~/aarch64-elf-toolchain/build-gcc $ ls /usr/local/cross-compiler/bin
+ls: cannot access '/usr/local/cross-compiler/bin': No such file or directory
+-----------------------------------------------------------
+
