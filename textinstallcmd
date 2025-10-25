@@ -100,3 +100,9 @@ johnspaugh@raspberrypi:~/aarch64-elf-toolchain/build-gcc $ ls /usr/local/cross-c
 ls: cannot access '/usr/local/cross-compiler/bin': No such file or directory
 -----------------------------------------------------------
 
+git push
+Username for 'https://github.com': johnspaugh
+Password for 'https://johnspaugh@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/johnspaugh/MS_ARM.git/'
+
