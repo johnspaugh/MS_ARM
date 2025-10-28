@@ -100,9 +100,14 @@ johnspaugh@raspberrypi:~/aarch64-elf-toolchain/build-gcc $ ls /usr/local/cross-c
 ls: cannot access '/usr/local/cross-compiler/bin': No such file or directory
 -----------------------------------------------------------
 
-git push
-Username for 'https://github.com': johnspaugh
-Password for 'https://johnspaugh@github.com': 
-remote: Invalid username or token. Password authentication is not supported for Git operations.
-fatal: Authentication failed for 'https://github.com/johnspaugh/MS_ARM.git/'
+//error when trying to make on raspi3-tutorial/03_uart1 and 05_uart0
+johnspaugh@raspberrypi:~/Documents/CSC290/raspi3-tutorial/03_uart1 $ make
+rm kernel8.elf *.o >/dev/null 2>/dev/null || true
+aarch64-elf-gcc -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles -c start.S -o start.o
+aarch64-elf-gcc -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles -c main.c -o main.o
+aarch64-elf-gcc -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles -c uart.c -o uart.o
+aarch64-elf-ld -nostdlib -nostartfiles start.o main.o uart.o -T link.ld -o kernel8.elf
+aarch64-elf-ld: Error: unable to disambiguate: -nostartfiles (did you mean --nostartfiles ?)
+make: *** [Makefile:39: kernel8.img] Error 1
+
 
