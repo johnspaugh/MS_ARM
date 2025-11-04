@@ -26,16 +26,21 @@ sudo systemctl status ssh
 
 sudo systemctl restart ssh
 
+#I connect tailscale through my Github account, on ARM device and my PC, 
+#so then can see each other's IP connected on the same network
 https://login.tailscale.com/admin/welcome
 
-//From the Professor,
-HornetSys / raspi3-tutorial, "raspi3-tutorial forked from bztsrc/raspi3-tutorial,"
-github.com, Accessed: Oct. 23, 2025. [Online] Available: 
-https://github.com/HornetSys/raspi3-tutorial/tree/HornetSys-patch-1
-Specific branch used to fine the code for the installs:
-https://github.com/HornetSys/raspi3-tutorial/blob/HornetSys-patch-1/00_crosscompiler/README.md
 
 -------------------------------------------------------
+#From the Professor,
+#HornetSys / raspi3-tutorial, "raspi3-tutorial forked from bztsrc/raspi3-tutorial,"
+#github.com, Accessed: Oct. 23, 2025. [Online] Available: 
+#https://github.com/HornetSys/raspi3-tutorial/tree/HornetSys-patch-1
+#Specific branch used to fine the code for the installs:
+#https://github.com/HornetSys/raspi3-tutorial/blob/HornetSys-patch-1/00_crosscompiler/README.md
+
+#Do all the installs from the branch HornetSys-patch-1, path to file, raspi3-tutorial/00_crosscompiler/README.md
+#However, when I tried to do the installs, I ran into the error below
 johnspaugh@raspberrypi:~/aarch64-elf-toolchain/build-gcc $ $ ls /usr/local/cross-compiler/bin
 aarch64-elf-addr2line  aarch64-elf-elfedit    aarch64-elf-gcc-ranlib  aarch64-elf-ld       aarch64-elf-ranlib
 aarch64-elf-ar         aarch64-elf-gcc        aarch64-elf-gcov        aarch64-elf-ld.bfd   aarch64-elf-readelf
@@ -100,7 +105,7 @@ johnspaugh@raspberrypi:~/aarch64-elf-toolchain/build-gcc $ ls /usr/local/cross-c
 ls: cannot access '/usr/local/cross-compiler/bin': No such file or directory
 -----------------------------------------------------------
 
-//error when trying to make on raspi3-tutorial/03_uart1 and 05_uart0
+#thus, I recieved this error when trying to make on raspi3-tutorial/03_uart1 and 05_uart0
 johnspaugh@raspberrypi:~/Documents/CSC290/raspi3-tutorial/03_uart1 $ make
 rm kernel8.elf *.o >/dev/null 2>/dev/null || true
 aarch64-elf-gcc -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles -c start.S -o start.o
@@ -110,4 +115,40 @@ aarch64-elf-ld -nostdlib -nostartfiles start.o main.o uart.o -T link.ld -o kerne
 aarch64-elf-ld: Error: unable to disambiguate: -nostartfiles (did you mean --nostartfiles ?)
 make: *** [Makefile:39: kernel8.img] Error 1
 
+#to fix this error, I got advice to delete the - nostartfiles text in the Makefile
+#did git diff to show the changes made in the Makefile, also only hear could change to doulb -, --nostartfiles
+git diff
+diff --git a/03_uart1/Makefile.gcc b/03_uart1/Makefile.gcc
+index 476f415..305026f 100644
+--- a/03_uart1/Makefile.gcc
++++ b/03_uart1/Makefile.gcc
+@@ -36,7 +36,7 @@ start.o: start.S
+        aarch64-elf-gcc $(CFLAGS) -c $< -o $@
+
+ kernel8.img: start.o $(OBJS)
+-       aarch64-elf-ld -nostdlib -nostartfiles start.o $(OBJS) -T link.ld -o kernel8.elf
++       aarch64-elf-ld -nostdlib start.o $(OBJS) -T link.ld -o kernel8.elf
+        aarch64-elf-objcopy -O binary kernel8.elf kernel8.img
+
+ clean:
+diff --git a/03_uart1/kernel8.img b/03_uart1/kernel8.img
+index 0eef540..ae125d8 100755
+Binary files a/03_uart1/kernel8.img and b/03_uart1/kernel8.img differ
+--------------------------------------------------------------------------------
+
+#to setup a remote desktop display of ARM device on pc,
+sudo raspbi-config  #special command to open a blue box
+3 #select 3 Interface
+13 #select vnc
+yes #agree to connect
+finish # come back to the beginning, so finish to stop.
+echo $ DISPLAY #empty blank answer,
+
+#to see the display of ARM device on pc, only need to download tiger vncreview pc and connect by ip or johnspaugh@ip, was still on talcewire guardwire
+#connect select 
+#!---special command to always remember in cmd----!
+export DISPLAY =:0
+
+make run
+#now another window in ARM pop up to see output when make run happens, can see it
 
