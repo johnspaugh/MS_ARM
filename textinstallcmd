@@ -152,3 +152,12 @@ export DISPLAY =:0
 make run
 #now another window in ARM pop up to see output when make run happens, can see it
 
+#Link below has the code to setup DISPLAY to be done at the boot, so don't have to do it, automatically does it, so insure 0.0 is correct what you needed/wanted
+https://www.elearningsolutions.co.in/display-environment-variables/ 
+Method 1: Modifying /etc/profile
+Editing /etc/profile: Open a terminal window and use the sudo nano /etc/profile command to edit the /etc/profile file with nano text editor (you can substitute nano with your preferred editor like vi).
+Adding the Export Line: At the end of the file, add the following line, replacing :0.0 with the appropriate display number (typically :0.0 for the first display):
+export DISPLAY=:0.0
+Saving the Changes: Press Ctrl+O to save the changes and Ctrl+X to exit the editor.
+#after Ctrl+O, will ask if name is good,if good then press enter to confirm
+
