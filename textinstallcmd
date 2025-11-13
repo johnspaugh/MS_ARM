@@ -30,6 +30,11 @@ sudo systemctl restart ssh
 #so then can see each other's IP connected on the same network
 https://login.tailscale.com/admin/welcome
 
+#Given by Professor, to get a key on ARM device then can clone form github, otherwise not autherized to even with pull/push
+#https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection
+#https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+#https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+#had to use a curl command on another website helped to fix, will need to look up, maybe.
 
 -------------------------------------------------------
 #From the Professor,
