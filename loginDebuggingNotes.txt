@@ -1,0 +1,54 @@
+ifconfig
+
+
+
+journalctl
+shift+g
+
+
+#not needed
+#sudo systemctl status rpi-connect-wayvnc.service
+
+Raspi-config
+
+
+John Spaugh
+John Spaugh
+Peng Kang
+Peng Kang
+Meeting Chat
+
+systemctl --user status rpi-connect-wayvnc.service rpi-connect-wayvnc-watcher.path
+
+sudo apt update
+
+sudo apt install --only-upgrade rpi-connect
+
+rpi-connect doctor
+
+cat ~/.config/environment.d/sway_env.conf
+
+XDG_CURRENT_DESKTOP=sway
+
+
+
+
+systemctl --user status rpi-connect
+
+https://www.raspberrypi.com/software/
+
+https://www.raspberrypi.com/documentation/computers/getting-started.html
+
+https://www.raspberrypi.com/documentation/computers/getting-started.html#installing-the-operating-system
+
+
+Who can see your messages?
+to:
+
+
+
+
+You're screen sharing
+
+
+Stop Share

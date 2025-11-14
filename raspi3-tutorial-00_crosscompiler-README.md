@@ -1,3 +1,6 @@
+#https://github.com/HornetSys/raspi3-tutorial/tree/HornetSys-patch-1/00_crosscompiler
+#https://github.com/HornetSys/raspi3-tutorial/blob/HornetSys-patch-1/00_crosscompiler/README.md
+
 AArch64 Cross Compiler
 ======================
 
