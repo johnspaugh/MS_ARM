@@ -1,22 +1,27 @@
-ifconfig
+//John Spaugh and Professor Peng Kang Meeting Chat when trying to debug
+// a error start up, stuck on the login screen.
+
+//when stuck on the GUI login screen, can input command to go to just a console
+//from just this console can login in, and input command to debug the system.
+"Ctrl+Alt+F1'
+//to go back to just GUI, which will be the last place when left the GUI, in this case likely the login screen
+"Ctrl+Alt+F7"
+//or can use the command "startx" in the console.
+
+ifconfig // see the configurations of the raspberrypi state
 
 
+journalctl //lists all the logs including bug errors
+shift+g    //reduce to just bug error logs 
 
-journalctl
-shift+g
 
-
-#not needed
+#not needed //was used to specifically look at item's status thought might be the problem.
 #sudo systemctl status rpi-connect-wayvnc.service
 
 Raspi-config
 
 
-John Spaugh
-John Spaugh
-Peng Kang
-Peng Kang
-Meeting Chat
+//John Spaugh and Professor Peng Kang Meeting Chat commands used in debug below
 
 systemctl --user status rpi-connect-wayvnc.service rpi-connect-wayvnc-watcher.path
 
@@ -32,8 +37,10 @@ XDG_CURRENT_DESKTOP=sway
 
 
 
-
 systemctl --user status rpi-connect
+
+
+//websites given for re-image the raspberrypi eraseing all data
 
 https://www.raspberrypi.com/software/
 
@@ -42,13 +49,3 @@ https://www.raspberrypi.com/documentation/computers/getting-started.html
 https://www.raspberrypi.com/documentation/computers/getting-started.html#installing-the-operating-system
 
 
-Who can see your messages?
-to:
-
-
-
-
-You're screen sharing
-
-
-Stop Share

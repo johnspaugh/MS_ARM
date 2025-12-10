@@ -1,6 +1,8 @@
+sudo apt install vim
 
 sudo apt install
-sudo apt install qemu-arm
+sudo apt install qemu-system-arm
+#sudo apt install qemu-arm #didn't recgonize this cmd
 sudo apt install github
 sudo apt install xv6-aarch64
 sudo apt install openssh-server 
@@ -159,10 +161,11 @@ make run
 
 #Link below has the code to setup DISPLAY to be done at the boot, so don't have to do it, automatically does it, so insure 0.0 is correct what you needed/wanted
 https://www.elearningsolutions.co.in/display-environment-variables/ 
-Method 1: Modifying /etc/profile
-Editing /etc/profile: Open a terminal window and use the sudo nano /etc/profile command to edit the /etc/profile file with nano text editor (you can substitute nano with your preferred editor like vi).
-Adding the Export Line: At the end of the file, add the following line, replacing :0.0 with the appropriate display number (typically :0.0 for the first display):
+#when I tried to do method 1, I would get stuck on the login screen after every power on.
+Method 2: Creating a Custom Boot Script
+sudo vim /etc/local.rc #if you forget the sudo, the file will not have permission to save.
 export DISPLAY=:0.0
+:wq #save quit  
 Saving the Changes: Press Ctrl+O to save the changes and Ctrl+X to exit the editor.
 #after Ctrl+O, will ask if name is good,if good then press enter to confirm
 
