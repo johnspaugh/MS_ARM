@@ -112,8 +112,23 @@ Run QEMU with GDB server enabled:
 Then attach from another terminal:
 
 ```bash
-gdb kernel8.elf
-(gdb) target remote :1234
+pi@cluster:~/Desktop/MS_ARM/boot_kernel $ gdb bootloader.elf
+(gdb) add-symbol-file kernel8.elf 0x200000
+Reading symbols from kernel8.elf...
 (gdb) b main
+Breakpoint 1 at 0x200020: file src/main.c, line 41.
+(gdb) b process_cmd
+Breakpoint 2 at 0x200104: file src/main.c, line 23.
+(gdb) target remote :1234
+Remote debugging using :1234
+0x0000000000000000 in ?? ()
 (gdb) c
+```
+copy image to target
+```
+python scripts/uart_send.py --image kernel8.bin --pty /dev/pts/2
+```
+uart console
+```
+screen /dev/pts/2 115200
 ```
