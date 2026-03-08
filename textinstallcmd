@@ -1,14 +1,16 @@
 sudo apt install vim
 
-sudo apt install
-sudo apt install qemu-system-arm
+sudo apt install # does generalize update for everything
 #sudo apt install qemu-arm #didn't recgonize this cmd
+sudo apt install qemu-system-arm # for 32 bit, for 64 use below one
+sudo apt install qemu-system-aarch64 #can simulate different system 64bit
 sudo apt install github
 sudo apt install xv6-aarch64
 sudo apt install openssh-server 
 
 sudo apt-get install gdb
-				 				 
+
+			 				 
 
 //how to leave qemu access, how to quit
 //"control+A, then press X"
@@ -151,7 +153,8 @@ yes #agree to connect
 finish # come back to the beginning, so finish to stop.
 echo $ DISPLAY #empty blank answer,
 
-#to see the display of ARM device on pc, only need to download tiger vncreview pc and connect by ip or johnspaugh@ip, was still on talcewire guardwire
+#to see the display of ARM device on pc, only need to download tiger vncreview pc 
+#and connect by ip or johnspaugh@ip, was still on Tailscale guardwire
 #connect select 
 #!---special command to always remember in cmd----!
 export DISPLAY =:0
@@ -159,7 +162,8 @@ export DISPLAY =:0
 make run
 #now another window in ARM pop up to see output when make run happens, can see it
 
-#Link below has the code to setup DISPLAY to be done at the boot, so don't have to do it, automatically does it, so insure 0.0 is correct what you needed/wanted
+#Link below has the code to setup DISPLAY to be done at the boot, so don't have to do it,
+#automatically does it, so insure 0.0 is correct what you needed/wanted
 https://www.elearningsolutions.co.in/display-environment-variables/ 
 #when I tried to do method 1, I would get stuck on the login screen after every power on.
 Method 2: Creating a Custom Boot Script
