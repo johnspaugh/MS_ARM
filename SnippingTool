@@ -8,3 +8,14 @@ No, above did not work,
 but just click the keyboards's button PrtScSysRq did capture the entire
 screen display on the moniter from the raspberry pi, so can do that,
 and it is saved/stored in default Pictures folder.
+
+--------------------------------
+When trying to run the boot_kernal program instructions on the Readme.md, 
+remember the point below in the instruction otherwise it will not work
+(Replace /dev/pts/5 with your actual PTY.)
+
+the boot_kernal program folder, need to replace with your own RaspberryPi5's pty
+Which can be seen by running the code from the program shown below:
+
+johnspaugh@raspberrypi:~/Documents/CSC290/MS_ARM/boot_kernel $ ./scripts/run-qemu-pty.sh
+char device redirected to /dev/pts/3 (label serial0)
