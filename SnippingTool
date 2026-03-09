@@ -1,0 +1,10 @@
+To install a snipping tool on Raspberry Pi 5,
+ you can use the Gnome Screenshot utility by running 
+the command sudo apt install gnome-screenshot in the terminal. 
+After installation, you can access it from the menu 
+under Accessories > Screenshot.
+
+No, above did not work,
+but just click the keyboards's button PrtScSysRq did capture the entire
+screen display on the moniter from the raspberry pi, so can do that,
+and it is saved/stored in default Pictures folder.
